@@ -1,24 +1,15 @@
 const express = require('express')
 const router = express.Router()
+const noteController = require('../controllers/noteController')
 
-router.get('/', (req, res) => {
-  res.send('Notes App')
-})
+router.get('/', noteController.index)
 
-router.get('/:id', (req, res) => {
-  res.send(`mostrar nota con id ${req.params.id}`)
-})
+router.get('/:id', noteController.show)
 
-router.post('/', (req, res) => {
-  res.send('Crear nota')
-})
+router.post('/', noteController.store)
 
-router.put('/:id', (req, res) => {
-  res.send('Actualizar nota')
-})
+router.put('/:id', noteController.update)
 
-router.delete('/:id', (req, res) => {
-  res.send('Eliminar nota')
-})
+router.delete('/:id', noteController.destroy)
 
 module.exports = router
