@@ -6,10 +6,12 @@ router.get('/', noteController.index)
 
 router.get('/:id', noteController.show)
 
-router.post('/', noteController.store)
+router.get('/create', noteController.create)
 
-router.put('/:id', noteController.update)
+router.post('/store', noteController.store)
 
-router.delete('/:id', noteController.destroy)
+router.post('/update', noteController.update)
+
+router.post('/delete', noteController.destroy)
 
 module.exports = router
