@@ -1,3 +1,4 @@
+const notes = require('../data/notes.json')
 
 const index = (req, res) => {
   res.send('Listar notas')

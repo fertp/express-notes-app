@@ -2,7 +2,9 @@ const express = require('express')
 const app = express()
 const port = 4000
 const appRouter = require('./routes')
-const apiRouter = require('./routes')
+const apiRouter = require('./routes/api')
+
+app.use(express.urlencoded({ extended: true }))
 
 app.use('/', appRouter)
 app.use('/api', apiRouter)
