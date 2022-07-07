@@ -6,6 +6,9 @@ const apiRouter = require('./routes/api')
 
 app.use(express.urlencoded({ extended: true }))
 
+app.set('view engine', 'ejs')
+app.set('views', './views')
+
 app.use('/', appRouter)
 app.use('/api', apiRouter)
 

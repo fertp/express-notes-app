@@ -11,6 +11,7 @@
   "author": "Fernando Torres Padilla <tp.fernando@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
   }
 }
