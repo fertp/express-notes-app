@@ -8,9 +8,6 @@
 
 .top__create-link {
   display: inline-block;
-}
-
-.top__create-button {
   font-size: 2.4rem;
   font-weight: 700;
   background-color: var(--c3);

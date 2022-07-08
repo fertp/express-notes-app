@@ -11,6 +11,10 @@
   transition: all 200ms ease-in-out;
 }
 
+a.button {
+  padding: 1.2rem 2.4rem 0.6rem;
+}
+
 .button:hover,
 .button:focus {
   background-color: var(--c3);
