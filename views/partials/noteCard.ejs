@@ -1,4 +1,7 @@
-<li class="note-card">
+<li 
+  class="note-card"
+  <%= note.color ? `style=background-color:${note.color};` : null  %>
+>
   <div>
     <h2 class="note-card__title">
       <%= note.title %>

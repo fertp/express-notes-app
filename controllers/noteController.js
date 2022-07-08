@@ -1,4 +1,4 @@
-const { getNotes, getNoteById, storeNote, updateNote, destroyNote } = require('../utils/note')
+const { getNotes, getNoteById, storeNote, updateNote, destroyNote, createNote } = require('../utils/note')
 
 const index = (req, res) => {
   res.render('home', { notes: getNotes() })
@@ -17,25 +17,22 @@ const show = (req, res, next) => {
 }
 
 const store = (req, res) => {
-  const note = {
-    ...req.body,
-    isActive: true,
-    userId: 1
-  }
+  const note = createNote(req.body)
   const reg = storeNote(note)
   res.redirect(`/notes/${reg.id}`)
 }
 
-const update = (req, res) => { 
+const update = (req, res, next) => {
   const note = {...req.body}
   if (note.id !== undefined) {
     note.id = Number(note.id)
     
     if (getNoteById(note.id)) {
       const reg = updateNote(note)
-      res.redirect(`/notes/${reg.id}`)
+      return res.render('note', { note: reg })
     }
   }
+  next()
 }
 
 const destroy = (req, res) => {
@@ -44,7 +41,7 @@ const destroy = (req, res) => {
 
     if (getNoteById(id)) {
       const reg = destroyNote(Number(id))
-      res.redirect(`/notes`)
+      res.redirect('/notes')
     }
   }
 }

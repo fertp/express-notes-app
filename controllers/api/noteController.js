@@ -1,4 +1,4 @@
-const { getNotes, getNoteById, storeNote, updateNote, destroyNote } = require('../../utils/note')
+const { getNotes, getNoteById, storeNote, updateNote, destroyNote, createNote } = require('../../utils/note')
 
 const index = (req, res) => {
   const notes = getNotes()
@@ -27,11 +27,7 @@ const show = (req, res) => {
 
 const store = (req, res) => {
   try {
-    const note = {
-      ...req.body,
-      isActive: true,
-      userId: 1
-    }
+    const note = createNote(req.body); console.log(note)
     const reg = storeNote(note)
     res.status(200).json(reg)
 

@@ -8,6 +8,11 @@
   margin-top: 3rem;
 }
 
+.note-form__field--color {
+  display: flex;
+  align-items: center;
+}
+
 .note-form label {
   display: block;
   color: var(--c4);

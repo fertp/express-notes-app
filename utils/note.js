@@ -45,6 +45,16 @@ const destroyNote = (id) => {
   }
 }
 
+const createNote = (data) => {
+  return {
+    id: createNoteId(),
+    color: '#fff',
+    isActive: true,
+    userId: 1,
+    ...data
+  }
+}
+
 const createNoteId = () => {
   const ids = notes.map(n => n.id)
   const max = Math.max(...ids)
@@ -57,5 +67,6 @@ module.exports = {
   getNoteById,
   storeNote,
   updateNote,
-  destroyNote
+  destroyNote, 
+  createNote
 }

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('./partials/head', { title: locals.note ? note.title : 'Crear nota' }) %>
-<body class="note-page">
+<body 
+  class="note-page"
+  <%= note.color ? `style=background-color:${note.color};` : null  %>
+>
   <%- include('./partials/header') %>
   
   <main class="main">
@@ -31,6 +34,33 @@
             name="description"
             rows="5"
           ><%= locals.note ? note.description : null %></textarea>
+        </div>
+
+        <div class="note-form__field note-form__field--color">
+          <label for="description">Color:</label>
+          &nbsp;
+          <select 
+            name="color" 
+            id="color"
+            value=""
+          >
+            <option 
+              value="#fff" 
+              <%= note.color === '#fff' ? 'selected' : null %>
+            >⚪</option>
+            <option 
+              value="#aff"
+              <%= note.color === '#aff' ? 'selected' : null %>  
+            >🔵</option>
+            <option 
+              value="#faf"
+              <%= note.color === '#faf' ? 'selected' : null %>
+            >🔴</option>
+            <option 
+              value="#ffa"
+              <%= note.color === '#ffa' ? 'selected' : null %>
+            >🟡</option>
+          </select>
         </div>
 
         <% if (locals.note) { %>
