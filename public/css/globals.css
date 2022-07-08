@@ -10,10 +10,14 @@
 }
 
 html {
+  height: 100%;
   font-size: 10px;
 }
 
 body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
   font-size: 1.8rem;
   background-color: var(--c1);
   color: var(--c2);

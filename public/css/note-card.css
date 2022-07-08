@@ -2,6 +2,7 @@
 
 .note-card {
   width: 100%;
+  max-width: 300px;
   min-height: 250px;
   padding: 1.6rem 1.6rem;
   display: flex;

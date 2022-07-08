@@ -2,40 +2,42 @@
 <html lang="en">
 <%- include('./partials/head') %>
 <body>
-  <%- include('./partials/header') %>
-  
-  <main class="main">
-    <div class="main__container">
-
-      <div class="top">
-        <h1 class="top__title">Notas</h1>
-        <div class="top__create">
-          <span>Crear una nota</span>
-          <a 
-            href="/notes/create"
-            class="top__create-link button"
-          >
-            +
-          </a>
-        </div>
-      </div>
+  <div class="wraper">
+    <%- include('./partials/header') %>
     
-      <section class="notes">
-        <% if (locals.notes) { %>
-          <ul class="notes__list">
-            <% notes.forEach(note => { %>
+    <main class="main">
+      <div class="main__container">
 
-              <%- include('./partials/noteCard', { note }) %>
+        <div class="top">
+          <h1 class="top__title">Notas</h1>
+          <div class="top__create">
+            <span>Crear una nota</span>
+            <a 
+              href="/notes/create"
+              class="top__create-link button"
+            >
+              +
+            </a>
+          </div>
+        </div>
+      
+        <section class="notes">
+          <% if (locals.notes) { %>
+            <ul class="notes__list">
+              <% notes.forEach(note => { %>
 
-            <% }) %>
-          </ul>
-        <% } %>
-      </section>
+                <%- include('./partials/noteCard', { note }) %>
 
-    </div>
-  </main>
+              <% }) %>
+            </ul>
+          <% } %>
+        </section>
 
-  
+      </div>
+    </main>
+  </div>
+
+  <%- include('./partials/footer') %>
 
 </body>
 </html>

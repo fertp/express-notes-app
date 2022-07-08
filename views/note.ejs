@@ -3,7 +3,7 @@
 <%- include('./partials/head', { title: locals.note ? note.title : 'Crear nota' }) %>
 <body 
   class="note-page"
-  <%= note.color ? `style=background-color:${note.color};` : null  %>
+  <%= locals.note && note.color ? `style=background-color:${note.color};` : null  %>
 >
   <%- include('./partials/header') %>
   
@@ -46,19 +46,19 @@
           >
             <option 
               value="#fff" 
-              <%= note.color === '#fff' ? 'selected' : null %>
+              <%= locals.note && note.color === '#fff' ? 'selected' : null %>
             >⚪</option>
             <option 
               value="#aff"
-              <%= note.color === '#aff' ? 'selected' : null %>  
+              <%= locals.note && note.color === '#aff' ? 'selected' : null %>  
             >🔵</option>
             <option 
               value="#faf"
-              <%= note.color === '#faf' ? 'selected' : null %>
+              <%= locals.note && note.color === '#faf' ? 'selected' : null %>
             >🔴</option>
             <option 
               value="#ffa"
-              <%= note.color === '#ffa' ? 'selected' : null %>
+              <%= locals.note && note.color === '#ffa' ? 'selected' : null %>
             >🟡</option>
           </select>
         </div>

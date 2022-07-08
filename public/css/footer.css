@@ -1,0 +1,14 @@
+/* footer.css */
+
+.footer {
+  width: 100%;
+  background-color: var(--c3);
+  padding: 0 1.6rem;
+}
+
+.footer__container {
+  height: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 0.8rem 0;
+}
