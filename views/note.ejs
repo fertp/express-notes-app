@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head', { title: locals.note ? note.title : 'Crear nota' }) %>
+<body class="note-page">
+  <%- include('./partials/header') %>
+  
+  <main class="main">
+    <div class="main__container">
+
+    <h1><%= locals.note ? note.title : 'Crear nota' %></h1>
+
+    <section class="note-form">
+      <form 
+        action="/notes<%= locals.note ? `/update` : `/store` %>" 
+        method="post"
+      >
+        <div class="note-form__field">
+          <label for="title">Título:</label>
+          <input 
+            id="title"
+            type="text"
+            name="title"
+            value="<%= locals.note ? note.title : null %>"
+          >
+        </div>
+
+        <div class="note-form__field">
+          <label for="description">Descripción:</label>
+          <textarea 
+            id="description"
+            name="description"
+            rows="5"
+          ><%= locals.note ? note.description : null %></textarea>
+        </div>
+
+        <% if (locals.note) { %>
+          <input type="hidden" name="id" value="<%= note.id %>">
+        <% } %>
+        
+        <div class="note-form__buttons">
+          <button 
+            type="button" 
+            onclick="window.location.assign('/notes')"
+            class="secondary-button button"  
+          >
+            <%= locals.note ? 'CANCELAR' : 'DESCARTAR' %>
+          </button>
+
+          <button 
+            type="submit"
+            class="primary-button button"
+          >
+            <%= locals.note ? 'ACTUALIZAR' : 'CREAR' %>
+          </button>
+        </div>
+
+      </form>
+    </section>
+
+
+    <% if (locals.note) { %>
+      <section class="delete-form">
+        <form action="/notes/delete" method="post">
+          <input type="hidden" name="id" value="<%= note.id %>">
+          <span>Eliminar nota:</span>
+          <button class="danger-button button">X</button>
+        </form>
+      </section>
+    <% } %>
+
+    </div>
+  </main>
+
+</body>
+</html>

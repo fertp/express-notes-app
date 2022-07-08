@@ -1,0 +1,20 @@
+/* note-card.css */
+
+.note-card {
+  width: 100%;
+  min-height: 250px;
+  padding: 1.6rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.note-card__description {
+  margin-top: 1.6rem;
+}
+
+.note-card__link {
+  display: inline-block;
+  align-self: flex-end;
+}

@@ -1,0 +1,9 @@
+/* style.css */
+
+@import './reset.css';
+@import './globals.css';
+@import './header.css';
+@import './home-page.css';
+@import './note-page.css';
+@import './note-card.css';
+@import './button.css';

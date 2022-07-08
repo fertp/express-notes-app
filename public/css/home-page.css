@@ -1,0 +1,27 @@
+/* home-page.css */
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top__create-link {
+  display: inline-block;
+}
+
+.top__create-button {
+  font-size: 2.4rem;
+  font-weight: 700;
+  background-color: var(--c3);
+}
+
+.notes {
+  margin-top: 5rem;
+}
+
+.notes__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 5rem;
+}

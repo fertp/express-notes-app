@@ -1,0 +1,40 @@
+/* button.css */
+
+.button {
+  display: inline-block;
+  padding: 1.2rem 2.4rem;
+  background-color: var(--c1);
+  border: 2px solid var(--c3);
+  border-radius: 8px;
+  color: var(--c4);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 200ms ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  background-color: var(--c3);
+  color: var(--c2);
+  border: 2px solid var(--c2);
+}
+
+.button:focus {
+  outline: none;
+}
+
+.primary-button {
+  background: var(--c2);
+  color: var(--c1);
+  font-weight: 700;
+  border: 2px solid var(--c4);
+}
+
+.secondary-button {
+  background-color: var(--c3);
+}
+
+.danger-button {
+  background-color: var(--c5);
+  color: var(--c1);
+  font-weight: 700;
+}

@@ -1,0 +1,18 @@
+<li class="note-card">
+  <div>
+    <h2 class="note-card__title">
+      <%= note.title %>
+    </h2>
+
+    <p class="note-card__description">
+      <%= note.description %>
+    </p>    
+  </div>
+
+  <a
+    class="note-card__link" 
+    href="/notes/<%= note.id %>"
+  >
+    <button class="button">Editar</button>
+  </a>
+</li>

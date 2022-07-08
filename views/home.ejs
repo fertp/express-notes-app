@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+  <%- include('./partials/header') %>
+  
+  <main class="main">
+    <div class="main__container">
+
+      <div class="top">
+        <h1 class="top__title">Notas</h1>
+        <div class="top__create">
+          <span>Crear una nota</span>
+          <a 
+            href="/notes/create"
+            class="top__create-link"
+          >
+            <button class="top__create-button button">
+              +
+            </button>
+          </a>
+        </div>
+      </div>
+    
+      <section class="notes">
+        <% if (locals.notes) { %>
+          <ul class="notes__list">
+            <% notes.forEach(note => { %>
+
+              <%- include('./partials/noteCard', { note }) %>
+
+            <% }) %>
+          </ul>
+        <% } %>
+      </section>
+
+    </div>
+  </main>
+
+  
+
+</body>
+</html>

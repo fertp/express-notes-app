@@ -1,0 +1,21 @@
+/* header.css */
+
+.header {
+  height: 80px;
+  background-color: var(--c3);
+  padding: 0 1.6rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.header__container {
+  height: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.header__link {
+  display: block;
+  font-size: 3.6rem;
+}

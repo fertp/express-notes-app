@@ -1,0 +1,35 @@
+/* global.css */
+
+:root {
+  --c1: #fff;
+  --c2: #000;
+  --c3: #eee;
+  --c4: #666;
+  --c5: #822;
+  --f1: 'Courier New', Courier, monospace
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-size: 1.8rem;
+  background-color: var(--c1);
+  color: var(--c2);
+  font-family: var(--f1);
+}
+
+.main {
+  padding: 0 3rem;
+}
+
+.main__container {
+  padding: 5rem 0;
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+.note-page .main__container {
+  max-width: 720px;
+}
